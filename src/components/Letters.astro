@@ -1,0 +1,93 @@
+---
+interface Props {
+    name: string;
+    alt: string;
+}
+
+const { name, alt } = Astro.props;
+---
+
+<section class="letters">
+    <img id="c" src="/c.svg" alt={alt} draggable="false" />
+    <img id="u" src="/u.svg" alt={alt} draggable="false" />
+    <img id="n" src="/n.svg" alt={alt} draggable="false" />
+    <img id="c1" src="/c-1.svg" alt={alt} draggable="false" />
+    <img id="t" src="/t.svg" alt={alt} draggable="false" />
+    <img id="a" src="/a.svg" alt={alt} draggable="false" />
+    <img id="e" src="/e.svg" alt={alt} draggable="false" />
+</section>
+
+<style>
+    .letters {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: auto;
+        gap: 1rem;
+    }
+
+    .letters img {
+        height: 6.25rem;
+    }
+
+    @media (width <= 600px) {
+        .letters img {
+            height: 2.5rem;
+        }
+    }
+
+    .letters #c {
+        width: 8.125rem;
+        animation: float-up 5s infinite;
+    }
+
+    @media (width <= 600px) {
+        .letters #c {
+            width: 3.75rem;
+
+        }
+    }
+
+    .letters #u {
+        animation: float-down 5s infinite;
+    }
+    .letters #n {
+        animation: float-up 5s infinite;
+    }
+    .letters #c1 {
+        animation: float-down 5s infinite;
+    }
+    .letters #t {
+        animation: float-up 5s infinite;
+    }
+    .letters #a {
+        animation: float-down 5s infinite;
+    }
+    .letters #e {
+        animation: float-up 5s infinite;
+    }
+
+    @keyframes float-up {
+        0% {
+            transform: translatey(0rem);
+        }
+        50% {
+            transform: translatey(-0.5rem);
+        }
+        100% {
+            transform: translatey(0rem);
+        }
+    }
+
+    @keyframes float-down {
+        0% {
+            transform: translatey(0rem);
+        }
+        50% {
+            transform: translatey(0.5rem);
+        }
+        100% {
+            transform: translatey(0rem);
+        }
+    }
+</style>
