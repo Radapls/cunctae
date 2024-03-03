@@ -1,10 +1,9 @@
 ---
 interface Props {
-    name: string;
     alt: string;
 }
 
-const { name, alt } = Astro.props;
+const { alt } = Astro.props;
 ---
 
 <section class="letters">
@@ -44,7 +43,6 @@ const { name, alt } = Astro.props;
     @media (width <= 600px) {
         .letters #c {
             width: 3.75rem;
-
         }
     }
 
