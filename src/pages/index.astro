@@ -1,8 +1,15 @@
 ---
 import Letters from "../components/Letters.astro";
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Cunctae">
-    <Letters alt="Cunctae"/>
+    <Letters alt="Cunctae" />
 </BaseLayout>
+
+<style>
+    html {
+        background-image: url("/monk.jpg");
+        background-position: center;
+    }
+</style>

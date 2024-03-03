@@ -11,9 +11,15 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="icon" type="image/x-icon" href="/c.svg">
+        <meta
+            name="Cunctae"
+            content="This is a collective that tries to undertand the meaning of all."
+        />
+        <meta
+            name="keywords"
+            content="all, cunctae, latin, collective, art, life"
+        />
+        <link rel="icon" type="image/x-icon" href="/c.svg" />
         <title>{title}</title>
     </head>
     <body>
@@ -22,10 +28,10 @@ const { title } = Astro.props;
 </html>
 <style is:global>
     :root {
-        --carmine: #A30015;
-        --deep-champagne: #F1D7A0;
-        --russian-violet: #2C0043;
-        --light-taupe:#A9996F;
+        --carmine: #a30015;
+        --deep-champagne: #f1d7a0;
+        --russian-violet: #2c0043;
+        --light-taupe: #a9996f;
     }
     html {
         margin: 0;
