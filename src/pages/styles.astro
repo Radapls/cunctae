@@ -1,0 +1,42 @@
+---
+import LandingPageLayout from "../layouts/LandingPageLayout.astro";
+---
+
+<LandingPageLayout title="Cunctae">
+    <section class="font-container">
+        <h1>Font</h1>
+        <h1>Courier New</h1>
+
+        <div id="fonts">
+            <h1>Cunctae Cunctum Cunctis</h1>
+            <h2>Cunctae Cunctum Cunctis</h2>
+            <h3>Cunctae Cunctum Cunctis</h3>
+            <h4>Cunctae Cunctum Cunctis</h4>
+            <h5>Cunctae Cunctum Cunctis</h5>
+            <h6>Cunctae Cunctum Cunctis</h6>
+        </div>
+    </section>
+</LandingPageLayout>
+
+<style>
+    html {
+        display: flex;
+        justify-content: center;
+    }
+    .font-container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .font-container > h1 {
+        text-align: center;
+        font-weight: 800;
+        margin: 1rem 0;
+        color: var(--russian-violet);
+    }
+
+    .font-container > #fonts {
+        text-align: center;
+    }
+</style>

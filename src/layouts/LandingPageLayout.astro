@@ -1,0 +1,79 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="Cunctae"
+            content="This is a collective that tries to undertand the meaning of all."
+        />
+        <meta
+            name="keywords"
+            content="all, cunctae, latin, collective, art, life"
+        />
+        <link rel="icon" type="image/x-icon" href="/c.svg" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+<style is:global>
+    :root {
+        --carmine: #a30015;
+        --deep-champagne: #f1d7a0;
+        --russian-violet: #2c0043;
+        --light-taupe: #a9996f;
+    }
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        background-color: var(--light-taupe);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        line-height: 90%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 200;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+</style>
