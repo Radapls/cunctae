@@ -10,11 +10,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+    html {
+        background-image: url("/monk.jpg");
+        background-position: center;
+    }
     body {
         display: grid;
         align-items: center;
         justify-items: center;
-        background-color: var(--light-taupe);
         gap: 1rem;
         overflow-x: hidden;
     }
@@ -33,11 +36,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
-        animation: 
-        typing 2s steps(16),
-        cursor .8s step-end infinite alternate;
+        animation:
+            typing 2s steps(16),
+            cursor 0.8s step-end infinite alternate;
     }
-    
 
     #text {
         font-family: system-ui;
@@ -76,11 +78,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     @keyframes cursor {
-        50% {border-color: transparent;}
+        50% {
+            border-color: transparent;
+        }
     }
 
     @keyframes typing {
-        from {width: 0;}
+        from {
+            width: 0;
+        }
     }
 </style>
 
