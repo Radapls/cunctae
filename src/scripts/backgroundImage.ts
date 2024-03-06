@@ -1,10 +1,7 @@
-import { imageUrls } from '@data/backgroundImages';
-
 // Define a function to change the background image
 function changeBackgroundImage(imageUrls: string[], currentIndex: number) {
-    document.documentElement.style.transition = 'background-image 1s ease-in-out';
-    document.documentElement.style.backgroundImage = `url(${imageUrls[currentIndex]})`;
-    document.documentElement.style.backgroundBlendMode = 'luminosity'
+    const imgElement = document.getElementById('background-image') as HTMLImageElement;
+    imgElement.src = imageUrls[currentIndex];
 
     // Increment the currentIndex for the next image
     currentIndex = (currentIndex + 1) % imageUrls.length;
@@ -14,5 +11,16 @@ function changeBackgroundImage(imageUrls: string[], currentIndex: number) {
         changeBackgroundImage(imageUrls, currentIndex);
     }, 3000);
 }
+
+// Array of image URLs
+const imageUrls: string[] = [
+    '/monk.jpg',
+    '/moon.jpg',
+    '/city.jpg',
+    '/desert.jpg',
+    '/art.jpg',
+    '/food.jpg',
+    '/architecture.jpg',
+];
 
 changeBackgroundImage(imageUrls, 0);

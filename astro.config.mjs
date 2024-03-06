@@ -29,7 +29,7 @@ export default defineConfig({
     integrations: [
         icon(),
     ],
-    image: {
-        domains: ["astro.build"],
-      }
+    prefetch: {
+        prefetchAll: true
+    }
 });
