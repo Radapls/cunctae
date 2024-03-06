@@ -1,0 +1,155 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header>
+    <nav>
+        <!-- Desktop navigation items -->
+        <ul id="desktop">
+            <li>
+                <a href="/home">
+                    <Icon
+                        width={25}
+                        height={25}
+                        name="mdi:home-circle-outline"
+                    />
+                </a>
+            </li>
+            <li>
+                <a href="/portfolio">Portfolio</a>
+            </li>
+            <li>
+                <a href="/cases">Cases</a>
+            </li>
+            <li>
+                <a href="/services">Services</a>
+            </li>
+        </ul>
+
+        <div id="mobile">
+            <button aria-label="Menu" id="menu">
+                <Icon width={25} height={25} name="mdi:hamburger-menu" />
+            </button>
+            <!-- Mobile Navigation Button -->
+            <button aria-label="Close Menu" id="close">
+                <Icon width={25} height={25} name="mdi:close" />
+            </button>
+            <ul id="mobile-menu">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="/cases">Cases</a>
+                </li>
+                <li>
+                    <a href="/services">Services</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<script src="../scripts/navigation.ts"></script>
+
+<style>
+    [data-icon="mdi:hamburger-menu"] {
+        color: var(--deep-champagne);
+    }
+
+    [data-icon="mdi:close"] {
+        color: var(--deep-champagne);
+    }
+
+    #desktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--carmine);
+    }
+
+    @media (width <= 600px) {
+        #desktop {
+            display: none;
+        }
+    }
+
+    ul {
+        padding: 2rem 0;
+        margin: 0;
+        list-style: none;
+        gap: 1rem;
+    }
+
+    nav > ul > li > a {
+        color: white;
+        font-style: none;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+
+    nav > ul > li > a:hover {
+        color: var(--deep-champagne);
+        transition: all ease-in 0.5s;
+    }
+
+    #mobile {
+        display: grid;
+        align-items: center;
+        background-color: var(--carmine);
+    }
+
+    @media (width >= 600px) {
+        #mobile {
+            display: none;
+        }
+    }
+
+    #mobile > #menu {
+        padding: 1rem;
+    }
+
+    #mobile > #menu > svg {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    #mobile > #close {
+        padding: 1rem;
+    }
+
+    #mobile > #close > svg {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    #mobile > #mobile-menu {
+        padding: 0;
+        text-align: center;
+    }
+
+    #mobile > #mobile-menu > li {
+        margin: 2rem;
+    }
+
+    #mobile > #mobile-menu > li > a {
+        color: white;
+        font-style: none;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        cursor: pointer;
+    }
+</style>

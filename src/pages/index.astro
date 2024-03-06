@@ -3,13 +3,15 @@ import Letters from "../components/Letters.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Cunctae">
+<BaseLayout isLandingPage={false} title="Cunctae">
     <Letters alt="Cunctae" />
 </BaseLayout>
 
+<script src="../scripts/backgroundImage.ts"></script>
+
 <style>
     html {
-        background-image: url("/monk.jpg");
         background-position: center;
+        background-size: cover;
     }
 </style>

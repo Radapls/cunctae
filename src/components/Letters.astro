@@ -4,25 +4,63 @@ interface Props {
 }
 
 const { alt } = Astro.props;
+
+const letters = [
+    {
+        id: "c",
+        url: "src/assets/letters/c.svg",
+    },
+    {
+        id: "u",
+        url: "src/assets/letters/u.svg",
+    },
+    {
+        id: "n",
+        url: "src/assets/letters/n.svg",
+    },
+    {
+        id: "c1",
+        url: "src/assets/letters/c-1.svg",
+    },
+    {
+        id: "t",
+        url: "src/assets/letters/t.svg",
+    },
+    {
+        id: "a",
+        url: "src/assets/letters/a.svg",
+    },
+    {
+        id: "e",
+        url: "src/assets/letters/e.svg",
+    },
+];
 ---
 
-<section class="letters">
-    <img id="c" src="/c.svg" alt={alt} draggable="false" />
-    <img id="u" src="/u.svg" alt={alt} draggable="false" />
-    <img id="n" src="/n.svg" alt={alt} draggable="false" />
-    <img id="c1" src="/c-1.svg" alt={alt} draggable="false" />
-    <img id="t" src="/t.svg" alt={alt} draggable="false" />
-    <img id="a" src="/a.svg" alt={alt} draggable="false" />
-    <img id="e" src="/e.svg" alt={alt} draggable="false" />
-</section>
+<a href="/home">
+    <section class="letters">
+        {
+            letters.map((img) => (
+                <img id={img.id} src={img.url} alt={alt} draggable="false" />
+            ))
+        }
+    </section>
+</a>
 
 <style>
+    html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
     .letters {
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: auto;
         gap: 1rem;
+        cursor: pointer;
     }
 
     .letters img {
