@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Page not found">
+<BaseLayout title="Page not found" isLandingPage={false}>
     <div id="text" data-text="404" draggable="false">404</div>
     <div class="container">
         <h1 class="not-found">Page not found...</h1>
@@ -13,6 +13,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     html {
         background-image: url("/monk.jpg");
         background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
     }
     body {
         display: grid;
