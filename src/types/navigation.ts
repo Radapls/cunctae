@@ -1,6 +1,6 @@
 import type { iconPaths } from '@data/iconPaths';
 
-export default interface FooterLink {
+export interface NavLink {
     label: string;
     href: string;
     icon: keyof typeof iconPaths;
