@@ -3,15 +3,30 @@ import Letters from "../components/Letters.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout isLandingPage={false} title="Cunctae">
-    <Letters alt="Cunctae" />
+<BaseLayout isLandingPage={false}>
+    <img id="background-image" />
+    <div id="letters-container">
+        <Letters alt="Cunctae" />
+    </div>
 </BaseLayout>
 
 <script src="../scripts/backgroundImage.ts"></script>
 
 <style>
-    html {
-        background-position: center;
-        background-size: cover;
+    img {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: sepia(1);
+    }
+
+    #letters-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 </style>
