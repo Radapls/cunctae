@@ -1,27 +1,25 @@
 {
-  "name": "cunctae",
-  "type": "module",
-  "version": "0.0.0",
-  "license": "UNLICENSED",
-  "author": "Cunctae <cunctae@gmail.com>",
-  "contributors": [
-    {
-        "name": "Juan Felipe Rada",
-        "email": "radapls8@gmail.com",
-        "url": "https://radapls.github.io/"
-      }
-  ],
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.5.6",
-    "@iconify-json/carbon": "^1.1.31",
-    "@iconify-json/mdi": "^1.1.64",
-    "astro": "^4.4.9",
-    "astro-icon": "^1.1.0",
-    "typescript": "^5.3.3"
-  }
+    "name": "cunctae",
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "author": "Cunctae <cunctae@gmail.com>",
+    "contributors": [
+        {
+            "name": "Juan Felipe Rada",
+            "email": "radapls8@gmail.com",
+            "url": "https://radapls.github.io/"
+        }
+    ],
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro check && astro build && astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.5.6",
+        "astro": "^4.4.9",
+        "typescript": "^5.3.3"
+    }
 }
