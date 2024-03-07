@@ -1,5 +1,7 @@
+import type { iconPaths } from '@data/iconPaths';
+
 export default interface FooterLink {
-  description: string;
-  icon: string;
-  url: string;
+    label: string;
+    href: string;
+    icon: keyof typeof iconPaths;
 }

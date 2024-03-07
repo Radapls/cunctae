@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import icon from "astro-icon";
 
 const isProd = import.meta.env.PROD;
 const isDev = import.meta.env.DEV;
@@ -26,9 +25,6 @@ export default defineConfig({
         port: SERVER_PORT,
         host: true
     },
-    integrations: [
-        icon(),
-    ],
     prefetch: {
         prefetchAll: true
     }
