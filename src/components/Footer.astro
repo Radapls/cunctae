@@ -1,69 +1,51 @@
 ---
-import { Icon } from "astro-icon/components";
-import type FooterLink from 'src/types/footer';
+import type FooterLink from "src/types/footer";
+import Icon from "./Icon.astro";
 
-const links: Array<FooterLink> = [
+/** Icon links to social media — edit these with links to your profiles! */
+const iconLinks: FooterLink[] = [
     {
-        url: "https://www.instagram.com/cunctae/",
-        description: "Cunctae on instagram",
-        icon: "mdi:instagram",
+        href: "https://www.instagram.com/cunctae/",
+        label: "Cunctae on instagram",
+        icon: "instagram-logo",
     },
     {
-        url: "mailto:cunctae@gmail.com?subject=Something in mind",
-        description: "Contact us",
-        icon: "mdi:gmail",
+        href: "mailto:cunctae@gmail.com?subject=Something in mind",
+        label: "Contact us",
+        icon: "email",
     },
 ];
 ---
 
 <footer>
     <section id="links">
-        <ul>
+        <ul class="socials">
             {
-                links.map((link) => (
-                    <li>
-                        <a href={link.url} target="_blank">
-                            <Icon
-                                width={30}
-                                height={30}
-                                name={link.icon}
-                                title={link.description}
-                            />
-                        </a>
-                    </li>
+                iconLinks.map(({ href, icon, label }) => (
+                    <a href={href} class="social">
+                        <span class="sr-only">{label}</span>
+                        <Icon icon={icon} />
+                    </a>
                 ))
             }
         </ul>
+        <h6>Cunctae {new Date().getFullYear()} &copy;</h6>
     </section>
-    <h6>Cunctae {new Date().getFullYear()}</h6>
 </footer>
 
 <style>
     footer {
-        background-color: var(--carmine);
+        background-color: var(--accent-overlay);
         width: 100%;
         position: fixed;
         bottom: 0;
         padding: 2rem 0;
     }
     #links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    ul {
-        display: flex;
-        align-items: center;
+        display: grid;
         justify-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 1rem;
-    }
-
-    a {
-        color: white;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     h6 {
@@ -71,5 +53,32 @@ const links: Array<FooterLink> = [
         justify-content: center;
         align-items: center;
         font-weight: 800;
+    }
+
+    .socials {
+        --icon-size: var(--text-xl);
+        
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        list-style: none;
+        margin: 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: var(--icon-size);
+        padding-inline-start: 0;
+    }
+
+    .social {
+        display: flex;
+        padding: var(--icon-padding);
+        text-decoration: none;
+        color: var(--accent-dark);
+        transition: color var(--theme-transition);
+    }
+
+    .social:hover,
+    .social:focus {
+        color: var(--accent-text-over);
     }
 </style>
