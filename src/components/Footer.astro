@@ -1,16 +1,17 @@
 ---
 import type FooterLink from "src/types/footer";
 import Icon from "./Icon.astro";
+import { socialMediaLinks } from "@data/socialMedia.ts";
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: FooterLink[] = [
     {
-        href: "https://www.instagram.com/cunctae/",
+        href: socialMediaLinks.instagram,
         label: "Cunctae on instagram",
         icon: "instagram-logo",
     },
     {
-        href: "mailto:cunctae@gmail.com?subject=Something in mind",
+        href: socialMediaLinks.mail,
         label: "Contact us",
         icon: "email",
     },
@@ -37,7 +38,6 @@ const iconLinks: FooterLink[] = [
     footer {
         background-color: var(--accent-overlay);
         width: 100%;
-        position: fixed;
         bottom: 0;
         padding: 2rem 0;
     }
@@ -57,7 +57,7 @@ const iconLinks: FooterLink[] = [
 
     .socials {
         --icon-size: var(--text-xl);
-        
+
         display: flex;
         align-items: center;
         justify-items: center;
