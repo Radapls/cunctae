@@ -1,20 +1,19 @@
 ---
 import Icon from "./Icon.astro";
-import ThemeToggle from "./ThemeToggle.astro";
 import type { NavLink } from "../types/navigation";
+import logo from "@assets/logos/Cunctae.png";
+import ThemeToggle from "./ThemeToggle.astro";
+import { socialMediaLinks } from "@data/socialMedia";
 
-/** Main menu items */
 const textLinks: { label: string; href: string }[] = [
     { label: "Home", href: "/home" },
     { label: "Portfolio", href: "/portfolio/" },
-    { label: "Cases", href: "/cases/" },
 ];
 
-/** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: NavLink[] = [
     {
         label: "Instagram",
-        href: "https://twitter.com/me",
+        href: socialMediaLinks.instagram,
         icon: "instagram-logo",
     },
 ];
@@ -22,7 +21,9 @@ const iconLinks: NavLink[] = [
 
 <nav>
     <div class="menu-header">
-        <a href="/" class="site-title"> Cuntae</a>
+        <a href="/" class="site-title">
+            <img src={logo.src} alt="Cunctae logo" draggable="false" />
+        </a>
         <menu-button>
             <template>
                 <button class="menu-button" aria-expanded="false">
@@ -171,17 +172,13 @@ const iconLinks: NavLink[] = [
     .menu-header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 0.5rem;
         padding: 1.5rem;
     }
 
-    .site-title {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        line-height: 1.1;
-        color: var(--gray-0);
-        text-decoration: none;
+    .site-title > img {
+        max-width: 200px;
     }
 
     .menu-button {
@@ -295,8 +292,8 @@ const iconLinks: NavLink[] = [
             padding: 0;
         }
 
-        .site-title {
-            font-size: var(--text-lg);
+        .site-title > img {
+            max-width: 300px;
         }
 
         .menu-content {
