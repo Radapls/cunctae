@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout isLandingPage={false}>
-    <img id="background-image" />
+    <img id="background-image" alt="background"/>
     <div id="letters-container">
         <Letters alt="Cunctae" />
     </div>
@@ -21,6 +21,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         align-items: center;
         justify-content: center;
         filter: sepia(1);
+        background-color: #f1d7a0;
     }
 
     #letters-container {

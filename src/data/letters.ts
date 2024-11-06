@@ -6,34 +6,39 @@ import t from '@assets/letters/t.svg';
 import a from '@assets/letters/a.svg';
 import e from '@assets/letters/e.svg';
 
+export interface Letter {
+    id: string;
+    src: string;
+    alt?: string;
+}
 
-export const letters = [
+export const letters: Letter[] = [
     {
         id: "c",
-        url: c.src,
+        src: c.src,
     },
     {
         id: "u",
-        url: u.src,
+        src: u.src,
     },
     {
         id: "n",
-        url: n.src,
+        src: n.src,
     },
     {
         id: "c1",
-        url: c1.src,
+        src: c1.src,
     },
     {
         id: "t",
-        url: t.src,
+        src: t.src,
     },
     {
         id: "a",
-        url: a.src,
+        src: a.src,
     },
     {
         id: "e",
-        url: e.src,
+        src: e.src,
     },
 ];

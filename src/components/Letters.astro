@@ -7,15 +7,13 @@ interface Props {
 const { alt } = Astro.props;
 ---
 
-<a href="#">
-    <section class="letters">
-        {
-            letters.map((img) => (
-                <img id={img.id} src={img.url} alt={alt} draggable="false" />
-            ))
-        }
-    </section>
-</a>
+<section class="letters">
+    {
+        letters.map((img) => (
+            <img src={img.src} alt={alt} id={img.id} draggable="false"/>
+        ))
+    }
+</section>
 
 <style>
     .letters {
@@ -23,7 +21,6 @@ const { alt } = Astro.props;
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: auto;
         gap: 1rem;
         cursor: pointer;
     }
