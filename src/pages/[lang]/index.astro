@@ -1,0 +1,52 @@
+---
+import ImageCard from "@components/ImageCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import type { ACTION_ERROR_CODES } from "astro:actions";
+import { LOCALES } from "src/i18n";
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+
+const cards = [
+  { text: "Architecture", image: "/architecture.jpg" },
+  { text: "Art", image: "/art.jpg" },
+  { text: "City Life", image: "/city.jpg" },
+  { text: "Desert", image: "/desert.jpg" },
+  { text: "Food", image: "/food.jpg" },
+  { text: "Moon", image: "/moon.jpg" }
+];
+---
+
+<BaseLayout>
+  <img id="background-image" alt="background" />
+  <section>
+    {cards.map(card => (
+      <ImageCard {...card} />
+    ))}
+  </section>
+</BaseLayout>
+
+<script src="../../../src/scripts/backgroundImage.ts"></script>
+
+<style>
+  img {
+    width: 100vw;
+    height: 400px;
+    object-fit: cover;
+    filter: sepia(1);
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
